@@ -1,0 +1,29 @@
+#formId{
+    margin: auto;
+    max-width: 500px;
+    width: 90%; 
+    border-style: solid;
+    background-color: #333;
+    padding: 10px;
+}
+
+label.whitetxt{
+    color: white;
+}
+
+
+/* screens smaller than 480px*/
+@media (max-width: 480px) {
+  body {
+    font-size: 25px; /* Bigger font for small phones */
+  }
+}
+
+
+/* screens >= 768px ex: tablets and up */
+@media (min-width: 768px) {
+body{
+     font-size: 20px; 
+    }
+}
+

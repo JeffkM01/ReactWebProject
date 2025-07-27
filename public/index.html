@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="Web site created using create-react-app"
+    />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    
+    <title>HomePage React</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    
+    <link href="../public/Project1/css/indexstyle.css" rel="stylesheet"/> 
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+   
+    <style>
+
+/*
+Layout Page
+*/
+
+
+#logocontainer{
+  border-right:1px solid;
+  background-color: #333;
+  border-right-width: thin;
+}
+
+#logo{
+   display: block;
+   margin-left: auto;
+   margin-right: auto;
+}
+
+#navFullW {
+  background-color: #333;
+  font-size: 20px;
+  padding: 35px 35px;
+  text-align: center;
+}
+
+a.hove{
+  padding: 15px 15px;
+  color: white;
+  text-decoration: none;
+
+}
+
+a.hove:hover {
+  background-color: #111;
+  padding: 10px 10px;
+}
+
+
+#contentID {
+  background-color: #eee;
+  max-height: 70vh;
+  width: 90%;
+  margin: 20px auto;
+  border: 1px dotted black;
+  overflow-y: scroll;
+}
+
+/*
+End of Layout Page
+*/
+
+
+
+
+/*
+Start Content Page
+*/
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+#contentID::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+#contentID {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+/*
+End Content Page
+*/
+
+
+
+/*
+Start Footer
+*/
+
+a.foot1{
+  text-decoration: none;
+  color: white;
+  padding: 10px 10px;
+}
+
+#footerLinks {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  list-style-type: none;
+  background-color: #333;
+  border: solid;
+  padding: 6px;
+  margin-top: 140px;
+  text-align: center;
+
+}
+
+a.foot1:hover{
+  background-color: #111;;
+  color: white;
+  text-decoration: none;
+  /*padding: 10px;*/
+}
+
+/*
+End Footer
+*/
+
+
+
+
+/*
+Start Registration page
+*/
+
+#formID{
+    margin: auto;
+    max-width: 500px;
+    width: 90%; 
+    border-style: solid;
+    background-color: #333;
+    padding: 10px;
+    font-size: 16px;
+}
+
+#whitetxt{
+    color: white;
+}
+
+/*body{
+    font-size: 16px;
+    background-color: red;
+}*/
+
+
+
+
+/* screens >= 768px ex: tablets and up */
+@media (min-width: 768px) {
+body{
+     font-size: 20px; 
+    }
+}
+
+
+
+/*
+End Registration page
+*/
+
+
+
+/*
+Start Login page
+*/
+
+#formId{
+    margin: auto;
+    max-width: 500px;
+    width: 90%; 
+    border-style: solid;
+    background-color: #333;
+    padding: 10px;
+}
+
+#wtxt{
+    color: white;
+}
+
+
+/* screens smaller than 480px*/
+@media (max-width: 480px) {
+  body {
+    font-size: 25px; /* Bigger font for small phones */
+  }
+}
+
+
+/* screens >= 768px ex: tablets and up */
+@media (min-width: 768px) {
+body{
+     font-size: 15px; 
+    }
+}
+
+
+
+
+
+/*
+End Login page
+*/
+
+
+
+
+
+/*
+Start Account page
+*/
+
+form.container-fluid{
+    width: 80%;
+    border: solid;
+    background-color: #333;
+    padding: 25px;
+}
+
+
+/* screens smaller than 480px*/
+@media (max-width: 480px) {
+  form.container-fluid {
+    width: 100%;; /* better width for small phones */
+    font-size: 16px;
+  }
+  #changeh2{
+    /*width: calc(100% - 20px);*/
+    color: black;
+    background-color: white;
+    text-align: center;
+    
+}
+
+}
+
+
+
+/* screens >= 768px ex: tablets and up */
+@media (min-width: 768px) {
+  #changeh2{
+    width: 105%;
+    color: black;
+    border: solid;
+    background-color: white;
+    text-align: center;
+    position: relative;
+    right: 29px;}
+}
+
+
+input[type=text], select {
+  width: 100%;
+  padding: 10px 10px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+
+}
+
+input[type=submit] {
+  width: 25%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+
+input[type=reset] {
+  width: 25%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 5px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.changeinputcolor{
+    color: black;
+}
+
+.changelabelcolor{
+    color: white;
+}
+
+
+/*
+End Account page
+*/
+
+
+
+/*
+Start Gallery page
+*/
+#galleryID.container{
+  background-color: #333;
+  margin-top: 20px;
+}
+
+@media (max-width: 480px) {
+/* better width for small phones */
+   
+}
+
+
+.galleryimage {
+      width: 100%;
+      height: auto;
+      border: 2px solid #ccc;
+      margin-bottom: 15px;
+      transition: transform 0.3s ease;
+    }
+
+    .galleryimage:hover {
+      transform: scale(1.05);
+      border-color: white;
+    }
+
+    #h2 {
+      text-align: center;
+      margin-top: 20px;
+      color: white;
+    }
+
+
+
+/*
+End Gallery page
+*/
+
+
+
+
+
+/*
+Start Logout page
+*/
+
+#pID {
+    margin: auto;
+    max-width: 500px;
+    width: 90%; 
+    border-style: solid;
+    margin-top: 40px;
+    font-size: 20px;
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    
+}
+
+/*
+End Logout page
+*/
+
+    </style>
+  
+  </head>
+
+
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+
+    <div id="root"></div>
+
+  </body>
+</html>

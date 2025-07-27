@@ -1,0 +1,13 @@
+#pID {
+    margin: auto;
+    max-width: 500px;
+    width: 90%; 
+    border-style: solid;
+    margin-top: 40px;
+    font-size: 20px;
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    
+}
