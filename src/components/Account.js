@@ -2,27 +2,29 @@ import { UseAllStates } from "./Checkstate";
 import { useNavigate } from "react-router-dom";
 import React, { useEffect, useState } from "react";
 
+
 const Account = () => {
   const navigate = useNavigate();
   const { logIn } = UseAllStates();
 
   const [formData, setFormData] = useState({
-    firstname: "",
-    lastname: "",
+    firstName: "",
+    lastName: "",
     address1: "",
     address2: "",
-    City: "",
+    city: "",
     State: "MO",
-    Zipcode: "",
-    PhoneNum: "",
-    Email: ""
+    zipCode: "",
+    phoneNumber: "",
+    email: "" 
   });
 
   // Fetch account data on component mount
   useEffect(() => {
     const fetchAccountData = async () => {
       try {
-        const res = await fetch("http://localhost:8080/account"); //?id=5    
+        const userId = localStorage.getItem('userId');
+        const res = await fetch(`http://localhost:8080/account?userId=${userId}`); 
         if (!res.ok) throw new Error("Failed to fetch");
         const data = await res.json();
         setFormData(data);
@@ -48,6 +50,9 @@ const Account = () => {
 
   const Submit = async (e) => {
     e.preventDefault();
+    const userId = localStorage.getItem('userId');
+
+
     // Submit updated data
     console.log("Submitting form data:", formData);
     try{
@@ -60,15 +65,16 @@ const Account = () => {
                     'Content-Type': 'application/json'
                 },
                 body: JSON.stringify({
-                    firstname: document.getElementById('firstname').value,
-                    lastname: document.getElementById('lastname').value, 
+                    userId: Number(userId),
+                    firstName: document.getElementById('firstName').value,
+                    lastName: document.getElementById('lastName').value, 
                     address1: document.getElementById('address1').value,
                     address2: document.getElementById('address2').value, 
-                    City: document.getElementById('City').value,
-                    State: document.getElementById('State').value,
-                    Zipcode: document.getElementById('Zipcode').value,
-                    PhoneNum: document.getElementById('PhoneNum').value,
-                    Email: document.getElementById('Email').value,
+                    city: document.getElementById('city').value,
+                    state: document.getElementById('state').value,
+                    zipCode: document.getElementById('zipCode').value,
+                    phoneNumber: document.getElementById('phoneNumber').value,
+                    email: document.getElementById('email').value,
                     method: 'POST',
                     url: '/account'
                 }),
@@ -98,13 +104,12 @@ const Account = () => {
             <div id="changeh2"> 
             <h1>Enter Your Account Info</h1>
             </div>
- 
-            <label for="firstname" class="changelabelcolor">Firstname</label><br/>
-            <input type="text" id="firstname" name="firstname" placeholder="Enter Your first name.." value={formData.firstname} onChange={handleChange} class="changeinputcolor"/><br/><br/>
+            <label for="firstName" class="changelabelcolor">firstName</label><br/>
+            <input type="text" id="firstName" name="firstName" placeholder="Enter Your first name.." value={formData.firstName} onChange={handleChange} class="changeinputcolor"/><br/><br/>
         
 
-            <label for="lastname" class="changelabelcolor">Lastname</label><br/>
-            <input type="text" id="lastname" name="lastname" placeholder="Enter Your last name.." value={formData.lastname} onChange={handleChange} class="changeinputcolor"/><br/><br/>
+            <label for="lastName" class="changelabelcolor">lastName</label><br/>
+            <input type="text" id="lastName" name="lastName" placeholder="Enter Your last name.." value={formData.lastName} onChange={handleChange} class="changeinputcolor"/><br/><br/>
 
             <label for="address1" class="changelabelcolor">Address Line 1</label><br/>
             <input type="text" id="address1" name="address1" placeholder="Enter Your Address Line 1.." value={formData.address1} onChange={handleChange} class="changeinputcolor"/><br/><br/>
@@ -112,11 +117,11 @@ const Account = () => {
             <label for="address2" class="changelabelcolor">Address Line 2</label><br/>
             <input type="text" id="address2" name="address2" placeholder="Enter Your Address Line 2.." value={formData.address2} onChange={handleChange} class="changeinputcolor"/><br/><br/>
 
-            <label for="City" class="changelabelcolor">City</label><br/>
-            <input type="text" id="City" name="City" placeholder="Enter Your City.." value={formData.City} onChange={handleChange} class="changeinputcolor"/><br/><br/>
+            <label for="city" class="changelabelcolor">city</label><br/>
+            <input type="text" id="city" name="city" placeholder="Enter Your City.." value={formData.city} onChange={handleChange} class="changeinputcolor"/><br/><br/>
 
-            <label for="State" class="changelabelcolor">State</label><br/>
-            <select id="State" name="State">
+            <label for="state" class="changelabelcolor">state</label><br/>
+            <select id="state" name="state">
                 <option value="AK">Alaska</option>
                 <option value="AL">Alabama</option>
                 <option value="AZ">Arizona</option>
@@ -124,18 +129,18 @@ const Account = () => {
                 <option value="MO">Missouri</option>
             </select><br/><br/>
 
-            <label for="Zipcode" class="changelabelcolor">Zip Code</label><br/>
-            <input type="text" id="Zipcode" name="Zipcode" placeholder="Enter Your Zip Code.." value={formData.Zipcode} onChange={handleChange} class="changeinputcolor"/><br/><br/>
+            <label for="zipCode" class="changelabelcolor">Zip Code</label><br/>
+            <input type="text" id="zipCode" name="zipCode" placeholder="Enter Your Zip Code.." value={formData.zipCode} onChange={handleChange} class="changeinputcolor"/><br/><br/>
 
 
-            <label for="PhoneNum" class="changelabelcolor">PhoneNumber</label><br/>
-            <input type="text" id="PhoneNum" name="PhoneNum" placeholder="Enter Your PhoneNumber.." value={formData.PhoneNum} onChange={handleChange} class="changeinputcolor"/><br/><br/>
+            <label for="phoneNumber" class="changelabelcolor">phoneNumber</label><br/>
+            <input type="text" id="phoneNumber" name="phoneNumber" placeholder="Enter Your PhoneNumber.." value={formData.phoneNumber} onChange={handleChange} class="changeinputcolor"/><br/><br/>
 
-            <label for="Email" class="changelabelcolor">Email</label><br/>
-            <input type="text" id="Email" name="Email" placeholder="Enter Your Email.." value={formData.Email} onChange={handleChange} class="changeinputcolor"/><br/><br/>
+            <label for="email" class="changelabelcolor">email</label><br/>
+            <input type="text" id="email" name="email" placeholder="Enter Your Email.." value={formData.email} onChange={handleChange} class="changeinputcolor"/><br/><br/>
 
             <input type="submit" class="changeinputcolor" id="sub"/>
-            <input type="reset" class="changeinputcolor" id="res"/>
+            <input type="reset" class="changeinputcolor" id="res"/>      
 
         </form>      
         

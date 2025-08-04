@@ -28,13 +28,14 @@ const Registration = () => {
             const status = res.status;
             const resJson = await res.json();
             console.log('Data', resJson);
+
             if(status === 201){
-                navigate("/"); // Redirect after login
-            }   else{
-                alert('Incorrect credentials')
+               navigate("/");
             }
-        }   
-    
+            else{
+                alert("Incorrect Credentials")
+            }
+        } 
 
         catch (e){
             alert(`Error: ${e.message}`);

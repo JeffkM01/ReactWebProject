@@ -28,9 +28,12 @@ const Login = () => {
         const status = res.status;
         const resJson = await res.json();
         console.log('Data', resJson);
+
         if(status === 200){
+            localStorage.setItem("userId", resJson.id);
             navigate("/"); // Redirect after login
-        }   else{
+        }   
+        else{
             alert('Incorrect credentials')
         }
         }   
