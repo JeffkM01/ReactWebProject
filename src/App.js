@@ -9,6 +9,11 @@ import Gallery from './components/Gallery.js';
 import Logout from './components/Logout.js';
 import { UseCheckState } from './components/Checkstate.js';
 
+/* Deploying web using Netlify--Start */
+//REACT_APP_API_URL=https://my-express-api.onrender.com
+/*                            --End*/
+
+
 function App() {
   return (
          <BrowserRouter>

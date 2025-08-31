@@ -11,7 +11,14 @@ const Registration = () => {
         try{
             logIn(); // Assume success
 
+
+             /* before deployment
             const res = await fetch('http://localhost:8080/registration', {
+            */
+
+
+            // after deployment 
+            const res = await fetch('https://express-m472.onrender.com/registration', {
                 method: 'POST',
                 headers: {
                     'Accept': 'application/json',

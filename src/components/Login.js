@@ -12,7 +12,15 @@ const Login = () => {
         try{
         logIn(); // Assume success
 
+
+        
+        /* before deployment
         const res = await fetch('http://localhost:8080/login', {
+        */
+
+
+        // after deployment 
+        const res = await fetch('https://express-m472.onrender.com/login', {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
